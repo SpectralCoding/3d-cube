@@ -89,6 +89,13 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.VertexTimer = new System.Windows.Forms.Timer(this.components);
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.chkDrawSurfaceNormals = new System.Windows.Forms.CheckBox();
+			this.chkDrawLight = new System.Windows.Forms.CheckBox();
+			this.label11 = new System.Windows.Forms.Label();
+			this.LightZ = new System.Windows.Forms.TextBox();
+			this.LightY = new System.Windows.Forms.TextBox();
+			this.LightX = new System.Windows.Forms.TextBox();
+			this.combShading = new System.Windows.Forms.ComboBox();
 			this.chkDrawCorners = new System.Windows.Forms.CheckBox();
 			this.chkDrawWireframe = new System.Windows.Forms.CheckBox();
 			this.chkDrawFaces = new System.Windows.Forms.CheckBox();
@@ -115,13 +122,6 @@
 			this.StartStopCmd = new System.Windows.Forms.Button();
 			this.FPSLbl = new System.Windows.Forms.Label();
 			this.RandomRotateTimer = new System.Windows.Forms.Timer(this.components);
-			this.combShading = new System.Windows.Forms.ComboBox();
-			this.label11 = new System.Windows.Forms.Label();
-			this.LightZ = new System.Windows.Forms.TextBox();
-			this.LightY = new System.Windows.Forms.TextBox();
-			this.LightX = new System.Windows.Forms.TextBox();
-			this.chkDrawLight = new System.Windows.Forms.CheckBox();
-			this.chkDrawSurfaceNormals = new System.Windows.Forms.CheckBox();
 			((System.ComponentModel.ISupportInitialize)(this.picCube)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -771,6 +771,73 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Manual Configuration";
 			// 
+			// chkDrawSurfaceNormals
+			// 
+			this.chkDrawSurfaceNormals.Location = new System.Drawing.Point(5, 421);
+			this.chkDrawSurfaceNormals.Name = "chkDrawSurfaceNormals";
+			this.chkDrawSurfaceNormals.Size = new System.Drawing.Size(146, 16);
+			this.chkDrawSurfaceNormals.TabIndex = 31;
+			this.chkDrawSurfaceNormals.Text = "Draw Surface Normals";
+			this.chkDrawSurfaceNormals.UseVisualStyleBackColor = true;
+			this.chkDrawSurfaceNormals.CheckedChanged += new System.EventHandler(this.chkDrawSurfaceNormals_CheckedChanged);
+			// 
+			// chkDrawLight
+			// 
+			this.chkDrawLight.Location = new System.Drawing.Point(5, 402);
+			this.chkDrawLight.Name = "chkDrawLight";
+			this.chkDrawLight.Size = new System.Drawing.Size(146, 20);
+			this.chkDrawLight.TabIndex = 30;
+			this.chkDrawLight.Text = "Draw Light Location";
+			this.chkDrawLight.UseVisualStyleBackColor = true;
+			this.chkDrawLight.CheckedChanged += new System.EventHandler(this.chkDrawLight_CheckedChanged);
+			// 
+			// label11
+			// 
+			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label11.Location = new System.Drawing.Point(5, 142);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(144, 13);
+			this.label11.TabIndex = 29;
+			this.label11.Text = "Light Source";
+			this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			// 
+			// LightZ
+			// 
+			this.LightZ.Location = new System.Drawing.Point(105, 158);
+			this.LightZ.Name = "LightZ";
+			this.LightZ.Size = new System.Drawing.Size(44, 20);
+			this.LightZ.TabIndex = 28;
+			this.LightZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// LightY
+			// 
+			this.LightY.Location = new System.Drawing.Point(55, 158);
+			this.LightY.Name = "LightY";
+			this.LightY.Size = new System.Drawing.Size(44, 20);
+			this.LightY.TabIndex = 27;
+			this.LightY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// LightX
+			// 
+			this.LightX.Location = new System.Drawing.Point(5, 158);
+			this.LightX.Name = "LightX";
+			this.LightX.Size = new System.Drawing.Size(44, 20);
+			this.LightX.TabIndex = 26;
+			this.LightX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// combShading
+			// 
+			this.combShading.FormattingEnabled = true;
+			this.combShading.Items.AddRange(new object[] {
+            "No Shading",
+            "Flat Shading",
+            "Vertex Shading"});
+			this.combShading.Location = new System.Drawing.Point(5, 442);
+			this.combShading.Name = "combShading";
+			this.combShading.Size = new System.Drawing.Size(147, 21);
+			this.combShading.TabIndex = 25;
+			this.combShading.SelectedIndexChanged += new System.EventHandler(this.combShading_SelectedIndexChanged);
+			// 
 			// chkDrawCorners
 			// 
 			this.chkDrawCorners.Location = new System.Drawing.Point(5, 387);
@@ -1001,73 +1068,6 @@
 			// 
 			this.RandomRotateTimer.Interval = 10;
 			this.RandomRotateTimer.Tick += new System.EventHandler(this.RandomRotateTimer_Tick);
-			// 
-			// combShading
-			// 
-			this.combShading.FormattingEnabled = true;
-			this.combShading.Items.AddRange(new object[] {
-            "No Shading",
-            "Flat Shading",
-            "Vertex Shading"});
-			this.combShading.Location = new System.Drawing.Point(5, 442);
-			this.combShading.Name = "combShading";
-			this.combShading.Size = new System.Drawing.Size(147, 21);
-			this.combShading.TabIndex = 25;
-			this.combShading.SelectedIndexChanged += new System.EventHandler(this.combShading_SelectedIndexChanged);
-			// 
-			// label11
-			// 
-			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label11.Location = new System.Drawing.Point(5, 142);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(144, 13);
-			this.label11.TabIndex = 29;
-			this.label11.Text = "Light Source";
-			this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-			// 
-			// LightZ
-			// 
-			this.LightZ.Location = new System.Drawing.Point(105, 158);
-			this.LightZ.Name = "LightZ";
-			this.LightZ.Size = new System.Drawing.Size(44, 20);
-			this.LightZ.TabIndex = 28;
-			this.LightZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// LightY
-			// 
-			this.LightY.Location = new System.Drawing.Point(55, 158);
-			this.LightY.Name = "LightY";
-			this.LightY.Size = new System.Drawing.Size(44, 20);
-			this.LightY.TabIndex = 27;
-			this.LightY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// LightX
-			// 
-			this.LightX.Location = new System.Drawing.Point(5, 158);
-			this.LightX.Name = "LightX";
-			this.LightX.Size = new System.Drawing.Size(44, 20);
-			this.LightX.TabIndex = 26;
-			this.LightX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// chkDrawLight
-			// 
-			this.chkDrawLight.Location = new System.Drawing.Point(5, 402);
-			this.chkDrawLight.Name = "chkDrawLight";
-			this.chkDrawLight.Size = new System.Drawing.Size(146, 20);
-			this.chkDrawLight.TabIndex = 30;
-			this.chkDrawLight.Text = "Draw Light Location";
-			this.chkDrawLight.UseVisualStyleBackColor = true;
-			this.chkDrawLight.CheckedChanged += new System.EventHandler(this.chkDrawLight_CheckedChanged);
-			// 
-			// chkDrawSurfaceNormals
-			// 
-			this.chkDrawSurfaceNormals.Location = new System.Drawing.Point(5, 421);
-			this.chkDrawSurfaceNormals.Name = "chkDrawSurfaceNormals";
-			this.chkDrawSurfaceNormals.Size = new System.Drawing.Size(146, 16);
-			this.chkDrawSurfaceNormals.TabIndex = 31;
-			this.chkDrawSurfaceNormals.Text = "Draw Surface Normals";
-			this.chkDrawSurfaceNormals.UseVisualStyleBackColor = true;
-			this.chkDrawSurfaceNormals.CheckedChanged += new System.EventHandler(this.chkDrawSurfaceNormals_CheckedChanged);
 			// 
 			// MainFrm
 			// 
